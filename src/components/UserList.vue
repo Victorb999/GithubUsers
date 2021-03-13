@@ -108,12 +108,13 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .containerUsers {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: var(--size-5);
 }
 .containerMsg {
   display: flex;

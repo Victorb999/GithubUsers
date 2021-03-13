@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Users } from "@/api/InterfacesGithubUsers";
+import { Users, User } from "@/api/InterfacesGithubUsers";
 
 const endpoint = "https://api.github.com/";
 
@@ -30,8 +30,25 @@ export async function getUsers(
     .then(response => {
       githubUsers = response.data;
     })
-    .catch(() => {      
+    .catch(() => {
       return false;
     });
   return githubUsers;
+}
+
+export async function getUser(userName: string) {
+  const url = "/users/" + userName;
+  let githubUser = {} as User;
+  await axios({
+    method: "get",
+    baseURL: endpoint,
+    url: url
+  })
+    .then(response => {
+      githubUser = response.data;
+    })
+    .catch(() => {
+      return false;
+    });
+  return githubUser;
 }
