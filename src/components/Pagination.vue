@@ -114,6 +114,18 @@ export default defineComponent({
   .active {
     background-color: var(--primary);
     color: var(--white);
+  }  
+}
+.theme-dark {
+  button {
+    background-color: darken(#1f1b24, 10%);
+    color: var(--white);
+    &:hover {
+      background-color: lighten(#1f1b24, 10%);
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }
 </style>

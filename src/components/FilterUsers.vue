@@ -76,6 +76,15 @@ export default defineComponent({
     flex-direction: row; //Direção que você deseja
   }
 }
+.theme-dark {
+  .filterContainer {
+    input[type="text"] {
+      box-shadow: 0 0px var(--size-1) #111;
+      background-color: darken(#1f1b24, 10%);
+      color: var(--white);
+    }
+  }
+}
 @media (max-width: 900px) {
   .filterContainer {
     input[type="text"] {
