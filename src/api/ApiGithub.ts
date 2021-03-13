@@ -4,14 +4,18 @@ import { Users } from "@/api/InterfacesGithubUsers";
 const endpoint = "https://api.github.com/";
 
 export async function getUsers(
-  q: string,
+  q: Array<string>,
   page: number,
   sort?: string,
   order?: string,
   perPage?: number
 ) {
   //montando a query
-  let query = `?q=${q}&page=${page}`;
+  let query = "?q=";
+  q.map(par => {
+    query += `${par} `;
+  });
+  query += `&page=${page}`;
   query += sort ? `&sort=${sort}` : "";
   query += order ? `&order=${order}` : "";
   query += perPage ? `&per_page=${perPage}` : "";
@@ -26,7 +30,7 @@ export async function getUsers(
     .then(response => {
       githubUsers = response.data;
     })
-    .catch(() => {
+    .catch(() => {      
       return false;
     });
   return githubUsers;
