@@ -5,7 +5,7 @@ export default createStore({
     pageNumber: 1,
     userPerPage: 20,
     pages: 1,
-    query : ["location:BRAZIL"],
+    query : ["location:BRASIL","location:BRAZIL"]
   },
   mutations: {
     setNumberUsers(state, payload) {

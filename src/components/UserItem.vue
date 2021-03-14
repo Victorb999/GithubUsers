@@ -55,7 +55,6 @@ export default defineComponent({
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     cursor: pointer;
     .perfil {
       display: flex;
@@ -71,6 +70,7 @@ export default defineComponent({
     }
     &:hover {
       background-color: var(--aux);
+      border-radius: 0 var(--size-1) var(--size-1) 0;
       span {
         color: var(--white);
       }

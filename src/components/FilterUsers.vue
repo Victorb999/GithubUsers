@@ -61,11 +61,13 @@ export default defineComponent({
     padding: var(--size-2) var(--size-3);
     margin: var(--size-2) var(--size-1);
     box-shadow: 0 0.5px var(--size-1) var(--gray-3);
-    font-weight: 200;
+    font-weight: 400;
+    color: var(--dark);
     &:focus {
       outline: none;
     }
   }
+
   button {
     padding: var(--size-2) var(--size-3);
     margin: var(--size-2) var(--size-1);
@@ -79,7 +81,7 @@ export default defineComponent({
 .theme-dark {
   .filterContainer {
     input[type="text"] {
-      box-shadow: 0 0px var(--size-1) #111;
+      box-shadow: 0.5px 0.5px var(--size-1) var(--aux);
       background-color: darken(#1f1b24, 10%);
       color: var(--white);
     }

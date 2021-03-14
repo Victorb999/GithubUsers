@@ -16,7 +16,7 @@ export async function getUsers(
     query += `${par} `;
   });
   query += `&page=${page}`;
-  query += sort ? `&sort=${sort}` : "";
+  query += sort ? `&sort=${sort}` : "&sort=followers";
   query += order ? `&order=${order}` : "";
   query += perPage ? `&per_page=${perPage}` : "";
   const url = "search/users" + query;
