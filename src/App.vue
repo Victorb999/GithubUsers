@@ -38,6 +38,7 @@ export default defineComponent({
   justify-content: flex-end;
   flex-direction: row;
   padding: var(--size-3);
+  padding-bottom: 0;
 }
 
 .tagget .checkbox {

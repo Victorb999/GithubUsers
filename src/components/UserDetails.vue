@@ -27,12 +27,15 @@
   </div>
   <div v-else-if="state.error" class="containerMsg">
     Ops, Ocorreu um erro ao buscar esse usuário. =(
-    <img src="./../assets/image/illustration/undraw_error.png" alt="error" />
+    <img
+      :src="require('@/assets/image/illustration/undraw_error.png')"
+      alt="error"
+    />
   </div>
   <div v-else class="containerMsg">
     Aguarde estamos carregando...
     <img
-      src="./../assets/image/base/loading.gif"
+      :src="require('@/assets/image/base/loading.gif')"
       alt="loading"
       class="loading"
     />
@@ -78,12 +81,12 @@ export default defineComponent({
         });
     }
     function dateFormat(criado: Date) {
-      const data = new Date(criado),
-        dia = data.getDate().toString(),
-        diaF = dia.length == 1 ? "0" + dia : dia,
-        mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
-        mesF = mes.length == 1 ? "0" + mes : mes,
-        anoF = data.getFullYear();
+      const data = new Date(criado);
+      const dia = data.getDate().toString();
+      const diaF = dia.length == 1 ? "0" + dia : dia;
+      const mes = (data.getMonth() + 1).toString(); //+1 pois no getMonth Janeiro começa com zero.
+      const mesF = mes.length == 1 ? "0" + mes : mes;
+      const anoF = data.getFullYear();
       return diaF + "/" + mesF + "/" + anoF;
     }
 

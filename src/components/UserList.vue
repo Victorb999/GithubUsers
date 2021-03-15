@@ -7,12 +7,15 @@
   </div>
   <div v-else-if="state.error" class="containerMsg">
     {{ state.errorMsg }}
-    <img src="./../assets/image/illustration/undraw_error.png" alt="error" />
+    <img
+      :src="require('@/assets/image/illustration/undraw_error.png')"
+      alt="error"
+    />
   </div>
   <div v-else class="containerMsg">
     Aguarde estamos carregando...
     <img
-      src="./../assets/image/base/loading.gif"
+      :src="require('@/assets/image/base/loading.gif')"
       alt="loading"
       class="loading"
     />

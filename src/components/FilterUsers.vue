@@ -9,7 +9,7 @@
       />
       <button type="submit" class="btn-primary">Buscar</button>
 
-      <span>{{ state.nameValidation }}</span>
+      <span v-if="state.nameValidation != ''">{{ state.nameValidation }}</span>
     </form>
   </div>
 </template>

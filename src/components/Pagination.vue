@@ -114,7 +114,7 @@ export default defineComponent({
   .active {
     background-color: var(--primary);
     color: var(--white);
-  }  
+  }
 }
 .theme-dark {
   button {
