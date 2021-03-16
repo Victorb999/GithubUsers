@@ -29,8 +29,10 @@ export default defineComponent({
     margin-top: var(--size-5);
     .title {
       font-family: var(--font-2);
+      letter-spacing: var(--size-1);
       font-size: 4rem;
       color: var(--primary);
+      font-weight: 900;
     }
   }
 }

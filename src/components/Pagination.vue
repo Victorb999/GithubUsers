@@ -36,7 +36,7 @@
     </button>
     <button
       id="last"
-      v-if="state.pages > state.limitFixed"
+      v-if="state.pages > state.limitFixed && state.pageLimit < state.pages"
       @click="state.pageLimit = state.pages"
     >
       Última
