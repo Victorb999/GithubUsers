@@ -56,9 +56,10 @@ export default defineComponent({
   justify-content: space-between;
   border-radius: 50px;
   position: relative;
-  padding: 5px;
-  height: 26px;
-  width: 50px;
+  padding: 6px;
+  height: 32px;
+  border: 3px solid;
+  width: 56px;
 }
 
 .tagget .label .ball {
