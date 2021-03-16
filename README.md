@@ -1,4 +1,6 @@
-<a href="https://github-users-search.vercel.app/" alt="gitgub users" style="color:#c91517" ><img width="64" alt="github Users" src="https://i.ibb.co/cb4kmBv/gitusers.png"/> **Github Users**</a>
+<a href="https://github-users-search.vercel.app/" alt="gitgub users" style="color:#c91517" ><img width="64" alt="github Users" src="https://i.ibb.co/cb4kmBv/gitusers.png"/> </a>
+
+##**Github Users**
 
 ### _App for search github users_
 #### vue 3 one piece and vueX 4
