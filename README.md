@@ -1,6 +1,6 @@
 # **Github Users**
-## _App for search github users_
-
+### _App for search github users_
+#### vue 3 one piece and vueX 4
 <img width="100" alt="vue3" src="https://pbs.twimg.com/media/EiNmaOCXsAI2sp-.png">
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/Victorb999/GithubUsers)
