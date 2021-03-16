@@ -1,6 +1,6 @@
 <template>
   <div class="filterContainer">
-    <form @submit.prevent="setFilter">
+    <form @submit.prevent="setFilter" class="form">
       <input
         type="text"
         name="search"

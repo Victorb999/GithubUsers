@@ -90,8 +90,8 @@ export default defineComponent({
       return diaF + "/" + mesF + "/" + anoF;
     }
 
-    onMounted(() => {
-      getUserGithub();
+    onMounted(async () => {
+      await getUserGithub();
     });
     return { state, dateFormat };
   }

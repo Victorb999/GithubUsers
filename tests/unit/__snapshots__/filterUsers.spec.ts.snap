@@ -2,7 +2,7 @@
 
 exports[`Filter Users renders the component 1`] = `
 <div class="filterContainer">
-  <form><input type="text" name="search" placeholder="Escreva aqui o nome de um usuário"><button type="submit" class="btn-primary">Buscar</button>
+  <form class="form"><input type="text" name="search" placeholder="Escreva aqui o nome de um usuário"><button type="submit" class="btn-primary">Buscar</button>
     <!--v-if-->
   </form>
 </div>

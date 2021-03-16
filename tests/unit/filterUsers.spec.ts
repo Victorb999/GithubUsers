@@ -38,11 +38,14 @@ describe("Filter Users", () => {
     expect(filter.exists()).toBe(true);
   });
 
-  // it("filter less 3 caracters", async () => {
-  //   const wrapper = build();
-  //   const textInput = wrapper.find('input[type="text"]');
-  //   await textInput.setValue("12");
-  //   await wrapper.find("button").trigger("click");
+  it("filter less 3 caracters", async () => {
+    const wrapper = build();
+    const textInput = wrapper.find('input[type="text"]');
+    await textInput.setValue("aa");
+    await wrapper.find(".form").trigger("submit");
+    const text = "Tente digitar um nome de usuário com mais que 3 letras.";
 
-  // });
+    expect(wrapper.html()).toContain(text);
+  });
+
 });

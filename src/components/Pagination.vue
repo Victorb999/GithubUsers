@@ -1,15 +1,20 @@
 <template>
   <div class="paginationContainer">
-    <span v-if="state.numberUsers > 0"
+    <span id="numUser" v-if="state.numberUsers > 0"
       >Total de registros: <strong> {{ state.numberUsers }}</strong></span
     >
     <button
-      v-if="state.pages > state.limitFixed"
+      id="first"
+      v-if="state.pages > state.limitFixed && state.pageLimit > 5"
       @click="state.pageLimit = state.limitFixed"
     >
       Primeira
     </button>
-    <button v-if="state.pageLimit > state.limitFixed" @click="pagePrevious">
+    <button
+      id="previous"
+      v-if="state.pageLimit > state.limitFixed"
+      @click="pagePrevious"
+    >
       anterior
     </button>
     <button
@@ -17,18 +22,20 @@
         ? state.pages
         : state.limitFixed"
       :key="num"
-      :class="state.pageNumber == calcPage(num) ? 'active' : null"
+      :class="state.pageNumber == calcPage(num) ? 'active' : num"
       @click="searchPage(calcPage(num))"
     >
       {{ calcPage(num) }}
     </button>
     <button
+      id="next"
       v-if="state.pages > state.limitFixed && state.pageLimit < state.pages"
       @click="state.pageLimit += 5"
     >
       próxima
     </button>
     <button
+      id="last"
       v-if="state.pages > state.limitFixed"
       @click="state.pageLimit = state.pages"
     >
