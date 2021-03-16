@@ -1,11 +1,13 @@
-# **Github Users**
+#[![GithubUsers](https://i.ibb.co/cb4kmBv/gitusers.png "GithubUsers")](https://github-users-search.vercel.app/ "GithubUsers") **Github Users**
 ### _App for search github users_
 #### vue 3 one piece and vueX 4
-<img width="100" alt="vue3" src="https://pbs.twimg.com/media/EiNmaOCXsAI2sp-.png">
+<img width="100" alt="vue3" src="https://pbs.twimg.com/media/EiNmaOCXsAI2sp-.png"/>
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/Victorb999/GithubUsers)
 
-[GitHubUsers](https://github-users-search.vercel.app/)
+<img width="500" alt="screen" src="https://i.ibb.co/XL62bGm/git-screen.jpg"/>
+
+[GitHub Users](https://github-users-search.vercel.app/)
 
 Github Users is vue 3 app created for search users and link for profile.
 Use the github api [Search users](https://docs.github.com/en/rest/reference/search#search-users "Search users")
