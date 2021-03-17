@@ -3,7 +3,12 @@
 exports[`Filter Users renders the component 1`] = `
 <div class="filterContainer">
   <form class="form"><input type="text" name="search" placeholder="Escreva aqui o nome de um usuário"><button type="submit" class="btn-primary">Buscar</button>
-    <!--v-if-->
+    <div class="filter">
+      <!--v-if-->
+    </div>
+    <div class="filter"><input type="checkbox" name="repositories"><label for="repositories"> Buscar somente quem tem mais de 20 repositórios</label></div>
+    <div class="filter"><input type="checkbox" name="followers"><label for="followers"> Buscar somente quem tem mais de 20 seguidores</label></div>
+    <div class="resetFilter"><button type="button" title="Busca os 1000 primeiros brasileiros com mais followers" class="reset"> 🔃 resetar busca </button></div>
   </form>
 </div>
 `;

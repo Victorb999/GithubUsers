@@ -84,7 +84,7 @@ export default defineComponent({
         })
         .finally(() => {
           state.loading = false;
-          console.log(store.state);
+          //console.log(store.state);
         });
     }
 
@@ -125,7 +125,7 @@ export default defineComponent({
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin-top: var(--size-5);
+  margin: var(--size-5);
   img {
     height: 60vh;
   }

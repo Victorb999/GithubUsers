@@ -9,7 +9,37 @@
       />
       <button type="submit" class="btn-primary">Buscar</button>
 
-      <span v-if="state.nameValidation != ''">{{ state.nameValidation }}</span>
+      <div class="filter">
+        <span v-if="state.nameValidation != ''">{{
+          state.nameValidation
+        }}</span>
+      </div>
+      <div class="filter">
+        <input
+          type="checkbox"
+          v-model="state.respositories"
+          name="repositories"
+        />
+        <label for="repositories">
+          Buscar somente quem tem mais de 20 repositórios</label
+        >
+      </div>
+      <div class="filter">
+        <input type="checkbox" v-model="state.followers" name="followers" />
+        <label for="followers">
+          Buscar somente quem tem mais de 20 seguidores</label
+        >
+      </div>
+      <div class="resetFilter">
+        <button
+          type="button"
+          title="Busca os 1000 primeiros brasileiros com mais followers"
+          class="reset"
+          @click="resetFilter"
+        >
+          🔃 resetar busca
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -25,17 +55,27 @@ export default defineComponent({
     interface Data {
       name: string;
       nameValidation: string;
+      respositories: boolean;
+      followers: boolean;
     }
 
     const state = reactive({
       name: "",
-      nameValidation: ""
+      nameValidation: "",
+      respositories: false,
+      followers: false
     }) as Data;
 
     function setFilter() {
       if (state.name.length > 3) {
         state.nameValidation = "";
-        const filter = [state.name + " in:login"];
+        let filter = [state.name + " in:login"];
+        if (state.respositories === true) {
+          filter = [...filter, "repos:>20"];
+        }
+        if (state.followers === true) {
+          filter = [...filter, "followers:>=20"];
+        }
         store.dispatch("changeQuery", filter);
       } else {
         state.nameValidation =
@@ -43,7 +83,14 @@ export default defineComponent({
       }
     }
 
-    return { state, setFilter };
+    function resetFilter() {
+      const filter = ["location:BRASIL", "location:BRAZIL"];
+      state.name = "";
+      state.nameValidation = "";
+      store.dispatch("changeQuery", filter);
+    }
+
+    return { state, setFilter, resetFilter };
   }
 });
 </script>
@@ -76,6 +123,35 @@ export default defineComponent({
     display: flex;
     flex-wrap: wrap; // Quebra a linha
     flex-direction: row; //Direção que você deseja
+    max-width: 90vw;
+    margin-top: var(--size-3);
+    color: var(--primary);
+    font-weight: bold;
+  }
+  .filter {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    margin-top: var(--size-3);
+    input {
+      margin-right: var(--size-2);
+    }
+  }
+  .reset {
+    padding: var(--size-2) var(--size-3);
+    margin: var(--size-2) var(--size-1);
+    background: transparent;
+    &:hover {
+      background: var(--gray-2);
+    }
+  }
+  .resetFilter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--size-3);
   }
 }
 .theme-dark {
@@ -84,6 +160,14 @@ export default defineComponent({
       box-shadow: 0.5px 0.5px var(--size-1) var(--aux);
       background-color: darken(#1f1b24, 10%);
       color: var(--white);
+    }
+    .reset {
+      color: var(--white);
+      transition: all 0.5s;
+      &:hover {
+        box-shadow: 0.5px 0.5px var(--size-1) var(--aux);
+        background-color: darken(#1f1b24, 10%);
+      }
     }
   }
 }
