@@ -87,6 +87,8 @@ export default defineComponent({
       const filter = ["location:BRASIL", "location:BRAZIL"];
       state.name = "";
       state.nameValidation = "";
+      state.respositories = false;
+      state.followers = false;
       store.dispatch("changeQuery", filter);
     }
 
