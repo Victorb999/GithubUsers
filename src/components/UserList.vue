@@ -57,18 +57,19 @@ export default defineComponent({
 
     async function getUsersGithub() {
       state.loading = true;
+      const MAX_SIZE_USERS = 1000; //"Only the first 1000 search results are available"
       await getUsers(state.q, state.page, "", "", state.perPage)
         .then(response => {
           state.users = response;
-          let total; //"Only the first 1000 search results are available"
+          let total;
           if (Object.keys(response).length === 0) {
             state.error = true;
             state.errorMsg =
               "Ops, ocorreu um problema ao buscarmos os usuários, tente novamente mais tarde. =(";
           }
-          if (response.total_count > 1000) {
+          if (response.total_count > MAX_SIZE_USERS) {
             state.error = false;
-            total = 1000;
+            total = MAX_SIZE_USERS;
           } else if (response.total_count == 0) {
             state.error = true;
             state.errorMsg = "Não encontramos nenhum registro para você. =(";

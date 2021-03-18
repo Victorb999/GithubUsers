@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Filter Users renders the component 1`] = `
+exports[`Filter Users Should renders the component 1`] = `
 <div class="filterContainer">
   <form class="form"><input type="text" name="search" placeholder="Escreva aqui o nome de um usuário"><button type="submit" class="btn-primary">Buscar</button>
     <div class="filter">

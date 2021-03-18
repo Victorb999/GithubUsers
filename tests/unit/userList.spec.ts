@@ -33,7 +33,7 @@ describe("Home", () => {
     return wrapper;
   };
 
-  it('renders the component', () => {
+  it('Should renders the component', () => {
     // arrange
     const wrapper = build();
     

@@ -1,5 +1,5 @@
 button {
-  background-color: var(--gray-1);
+  background-color: var(--gray-2);
   border: none;
   border-radius: 5px;
   padding: var(--size-1) var(--size-2);
@@ -8,7 +8,7 @@ button {
   transition: all 0.3s;
   font-weight: 700;
   &:hover {
-    background-color: var(--gray-2);
+    background-color: var(--gray-3);
   }
   &:focus {
     outline: none;

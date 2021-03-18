@@ -12,7 +12,7 @@ describe("User Details", () => {
     });
   });
 
-  it("renders user", () => {
+  it("Should renders user", () => {
     expect(wrapper.props('user')).toBe(user)
   });
 });

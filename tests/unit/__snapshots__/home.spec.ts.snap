@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home renders the component 1`] = `
+exports[`Home Should renders the component 1`] = `
 <div class="home">
   <header>
     <h1 class="title">Github Users</h1>

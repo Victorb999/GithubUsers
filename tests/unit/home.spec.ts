@@ -3,7 +3,7 @@ import Home from "@/views/Home.vue";
 
 describe("Home", () => {
   
-  it('renders the component', () => {
+  it('Should renders the component', () => {
     // arrange
     const wrapper = shallowMount(Home)
     
@@ -11,7 +11,7 @@ describe("Home", () => {
     expect(wrapper.html()).toMatchSnapshot()
   });
   
-  it('renders Title', () => {
+  it('Should renders Title', () => {
     // arrange
     const wrapper = shallowMount(Home)
     const text = wrapper.find('h1')

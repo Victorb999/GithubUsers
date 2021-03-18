@@ -67,14 +67,16 @@ export default defineComponent({
     }) as Data;
 
     function setFilter() {
-      if (state.name.length > 3) {
+      const MIN_SIZE_NAME = 3;
+      const MIN_SIZE_FILTER = 20;
+      if (state.name.length > MIN_SIZE_NAME) {
         state.nameValidation = "";
         let filter = [state.name + " in:login"];
         if (state.respositories === true) {
-          filter = [...filter, "repos:>20"];
+          filter = [...filter, `repos:>${MIN_SIZE_FILTER}`];
         }
         if (state.followers === true) {
-          filter = [...filter, "followers:>=20"];
+          filter = [...filter, `followers:>=${MIN_SIZE_FILTER}`];
         }
         store.dispatch("changeQuery", filter);
       } else {

@@ -15,12 +15,12 @@ describe("User Details", () => {
       props: { user: user }
     });
   });
-  it('render link', () => {
+  it('Should render link', () => {
     const link = wrapper.find("a");    
     expect(link.attributes('href')).toContain(user.html_url);
   })
 
-  it("click in header, render details", async () => {
+  it("When click in header, render details", async () => {
     const last = wrapper.find(".userHeader");
     await last.trigger("click");    
     expect(wrapper.html()).toContain("user-details");

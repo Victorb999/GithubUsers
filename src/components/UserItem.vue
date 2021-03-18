@@ -44,6 +44,7 @@ export default defineComponent({
 
 <style lang="scss">
 .userContainer {
+  background-color: var(--white);
   margin: var(--size-2) 0;
   border-radius: var(--size-1);
   border-left: var(--size-1) solid var(--primary);

@@ -24,14 +24,14 @@ describe("Filter Users", () => {
     });
     return wrapper;
   };
-  it("renders the component", () => {
+  it("Should renders the component", () => {
     // arrange
     const wrapper = build();
     // assert
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("renders filter", () => {
+  it("Should renders filter", () => {
     // arrange
     const wrapper = build();
     const filter = wrapper.find(".filterContainer");

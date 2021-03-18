@@ -18,7 +18,7 @@ const router = createRouter({
 
 
 describe("App.vue", () => {
-  it("test the dark theme", async () => {
+  it("Should apply dark theme", async () => {
     router.push("/");
     await router.isReady();
 

@@ -5,7 +5,9 @@
     >
     <button
       id="first"
-      v-if="state.pages > state.limitFixed && state.pageLimit > 5"
+      v-if="
+        state.pages > state.limitFixed && state.pageLimit > state.limitFixed
+      "
       @click="state.pageLimit = state.limitFixed"
     >
       Primeira
@@ -88,7 +90,9 @@ export default defineComponent({
     }
 
     function pagePrevious() {
-      state.pageLimit > 5 ? (state.pageLimit -= 5) : (state.pageLimit = 5);
+      state.pageLimit > state.limitFixed
+        ? (state.pageLimit -= state.limitFixed)
+        : (state.pageLimit = state.limitFixed);
     }
 
     attPageList();
@@ -104,16 +108,12 @@ export default defineComponent({
     margin-right: var(--size-3);
   }
   button {
-    background-color: var(--gray-1);
     border: none;
     border-radius: 5px;
     padding: var(--size-1) var(--size-2);
     margin: var(--size-2) var(--size-1);
     min-width: var(--size-4);
     transition: all 0.3s;
-    &:hover {
-      background-color: var(--gray-2);
-    }
     &:focus {
       outline: none;
     }
